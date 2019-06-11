@@ -1,1 +1,0 @@
-Fri Jun 07 23:56:10 CEST 2019 **** balance = 0Fri Jun 07 23:56:20 CEST 2019 **** balance = 0Fri Jun 07 23:56:30 CEST 2019 **** balance = 0Fri Jun 07 23:56:40 CEST 2019 **** balance = 0Fri Jun 07 23:56:50 CEST 2019 **** balance = 0Fri Jun 07 23:57:00 CEST 2019 **** balance = 0
