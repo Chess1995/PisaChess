@@ -9,22 +9,12 @@ public class Server {
 
 
     List<Player> elencoGiocatori = new ArrayList<Player>() ; //contiene l'elenco dei partecipanti.
+    Standings classifica = new Standings() ;
 
-        @Override
-        public String toString() {
-            return "Server{" +
-                    "port=" + port +
-                    ", balance=" + balance +
-                    ", server=" + server +
-                    ", nAcceptedRequest=" + nAcceptedRequest +
-                    '}';
-        }
-
-        private int port;
-        private int balance;
-
-        ServerSocket server;
-        int nAcceptedRequest;
+    private int port;
+    private int balance;
+    ServerSocket server;
+    int nAcceptedRequest;
 
         public Server(int port){
             this.port = port;
@@ -86,7 +76,10 @@ public class Server {
                     Scanner in = new Scanner(assigned_client.getInputStream());
                     PrintWriter out = new PrintWriter(assigned_client.getOutputStream());
 
-                    message = "Torneo di scacchi\n\n[1] Inserisci partecipanti\n[2] Visualizza partecipanti\n[3] Genera turno\n[5] Esci dal programma\nend";
+                    message = "Torneo di scacchi\n\n[1] Inserisci partecipanti\n[2] Visualizza partecipanti\n";
+                    message=message+"[3] Visualizza classifica\n[4] Genera turno\n[5] Esci dal programma\n" ;
+                    message=message+"end" ; // utilizzata per segnalare la fine dell'invio di un flusso di dati.
+
                     out.println(message);
                     out.flush(); //invio il MENU A TENDINA AL CLIENT
 
@@ -120,11 +113,12 @@ public class Server {
 
                             player.setTournPoints(0); //inizialmente il giocatore ha 0 punti classifica
                             elencoGiocatori.add(player) ;
+                            classifica.addPlayer(player);
                             System.out.println("\nHo aggiunto "+nome+" "+cognome+" all'elenco partecipanti!");
 
                         }
 
-                        else
+
                         if (scelta==2) {
                             //Player player=new Player() ;
                             //Iterator iterator=elencoGiocatori.iterator() ;
@@ -139,8 +133,19 @@ public class Server {
                             out.println(message);
                             out.flush();
 
-                            invio=in.nextLine() ;
+                            //invio=in.nextLine() ;
+                        }
+
+
+                            if(scelta==3){
+                                message=classifica.printClassifica()+"\n";
+                                message=message+"end" ;
+                                out.println(message);
+                                out.flush();
+
+                                invio=in.nextLine() ;
                             }
+
 
                     }
 
@@ -161,11 +166,6 @@ public class Server {
             }
 
         }
-
-
-
-
-
     }
 
 

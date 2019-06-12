@@ -84,9 +84,10 @@ public class Client {
                     out.flush();
 
                 }
-                    else
+
                     if(scelta==2) {
                         clearScreen();
+
 
                          ciclo=0 ;
                         while(ciclo!=1) {
@@ -99,12 +100,39 @@ public class Client {
                             System.out.println(message);
                         }
 
-                        System.out.println("Premere invio per continuare");
-                        invio=scanner.nextLine() ;
-                        out.println(invio);
-                        out.flush();
+                        //System.out.println("Premere invio per continuare");
+                        //invio=scanner.nextLine() ;
+                        //out.println(invio);
+                        //out.flush();
 
                     }
+
+
+                        if(scelta==3) {
+                            clearScreen();
+
+
+                            ciclo=0 ;
+                            while(ciclo!=1) {
+
+                                message= in.nextLine() ;
+                                if (message.startsWith("end"))
+                                    ciclo=1 ;
+                                else
+                                    System.out.println(message);
+                            }
+
+                            //System.out.println("Premere invio per continuare");
+                            //invio=scanner.nextLine() ;
+                            //out.println(invio);
+                            //out.flush();
+
+                        }
+
+
+                        if(scelta==5){
+                            return ;
+                        }
 
 
 
