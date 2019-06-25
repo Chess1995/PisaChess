@@ -53,13 +53,17 @@ public class Client {
                 //------LETTURA DEL MENU A TENDINA------
 
                 int ciclo = 0;
+                String message1= null ;
                 while (ciclo != 1) {
-                    message = in.nextLine();
-                    if (message.startsWith("end"))
+                    message1 = in.nextLine();
+                    if (message1.startsWith("end"))
                         ciclo = 1;
                     else
-                        System.out.println(message);
+                        message=message+message1 ;
+                        //System.out.println(message);
                 }
+                clearScreen();
+                System.out.println(message);
 
 
                 scelta = Integer.parseInt(scanner.nextLine());
