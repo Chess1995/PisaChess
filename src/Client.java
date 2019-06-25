@@ -30,10 +30,10 @@ public class Client {
         String message = null;
         int scelta;
         int nTurno=0 ; //indica a quale turno il torneo si trova
-        int inizioTorneo=0 ; // serve per il controllo delle funzionalità ammesse.
+        int inizioTorneo=0 ; // serve per il controllo delle funzionalita ammesse.
         int nGiocatori=0 ; //tiene il conto del numero di giocatori inseriti
-        int turnoInCorso=0 ; //indica, se posto a 1, che un turno è ancora in corso di svolgimento.
-        int fineTorneo=0 ; //posto ad 1 indica che il torneo è terminato
+        int turnoInCorso=0 ; //indica, se posto a 1, che un turno e ancora in corso di svolgimento.
+        int fineTorneo=0 ; //posto ad 1 indica che il torneo e terminato
 
         String nomeGiocatore ;
         String cognomeGiocatore ;
@@ -66,7 +66,7 @@ public class Client {
                 out.println(scelta); //COMUNICO LA SCELTA AL SERVER
                 out.flush();
 
-                if(scelta==1) { //dovro' leggere nome cognome e punteggio elo
+                if(scelta==1) { //dovro leggere nome cognome e punteggio elo
                     clearScreen();
                     inizioTorneo=Integer.parseInt(in.nextLine()) ;
                     if (inizioTorneo == 0) {

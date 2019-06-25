@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Round {
 
-    private List<Pairing> pairingList = new ArrayList<Pairing>() ; // Il turno è una lista di abbinamenti!
+    private List<Pairing> pairingList = new ArrayList<Pairing>() ; // Il turno e una lista di abbinamenti!
     private int nRound ; //identifica il numero del turno.
 
 
@@ -32,7 +32,7 @@ public class Round {
             message=message+i+"            ";
             i++ ;
 
-            //stampa del
+            //stampa
             cognome=pairing.getPlayer1().getSurname()+allunga ;
             message=message+cognome.substring(0,10) ;
             message=message+"   " ;

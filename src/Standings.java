@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Standings {
 
-    private List<Player> classifica = new ArrayList<Player>() ; //è una lista di giocatori
+    private List<Player> classifica = new ArrayList<Player>() ; //e una lista di giocatori
     private int nTurno ;
 
     public void sortClassifica(){
