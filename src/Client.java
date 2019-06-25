@@ -263,6 +263,7 @@ public class Client {
 
                                 //if (controlloOpzione==1){
                                 int letturaMosse = 0;
+                                System.out.println("\nInserire le mosse del match:\n");
                                 while (letturaMosse != 1) {
                                     message = scanner.nextLine();
                                     if (message.equals("#1") || message.equals("#0.5") || message.equals("#0"))
