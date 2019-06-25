@@ -1,11 +1,16 @@
-public class Player {
+public class Player implements Comparable<Player> {
 
     private String name ;
     private String surname ;
     private String title ;
     private int elo ;
-    private double tournPoints ;
+    private double tournPoints=0 ;
     private int id ;
+
+    public int compareTo(Player player){
+
+        return Double.toString(tournPoints).compareTo(Double.toString(player.getTournPoints())) ;
+    }
 
 
     public String getName() {
@@ -52,7 +57,7 @@ public class Player {
         return tournPoints;
     }
 
-    public void setTournPoints(double tournPoints) {
-        this.tournPoints = tournPoints;
+    public void addTournPoints(double risultato) {
+        this.tournPoints = this.tournPoints+risultato ;
     }
 }
