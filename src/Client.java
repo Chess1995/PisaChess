@@ -67,24 +67,27 @@ public class Client {
                 out.flush();
 
                 if(scelta==1) { //dovro leggere nome cognome e punteggio elo
-                    clearScreen();
+                    //clearScreen();
                     inizioTorneo=Integer.parseInt(in.nextLine()) ;
                     if (inizioTorneo == 0) {
                         message = in.nextLine();
+                        clearScreen();
                         System.out.println(message);
                         nomeGiocatore = scanner.nextLine();
                         out.println(nomeGiocatore);
                         out.flush();
 
-                        clearScreen();
+                        //clearScreen();
                         message = in.nextLine();
+                        clearScreen();
                         System.out.println(message);
                         cognomeGiocatore = scanner.nextLine();
                         out.println(cognomeGiocatore);
                         out.flush();
 
-                        clearScreen();
+                        //clearScreen();
                         message = in.nextLine();
+                        clearScreen();
                         System.out.println(message);
                         elo = Integer.parseInt(scanner.nextLine());
                         out.println(elo);
