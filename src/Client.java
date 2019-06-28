@@ -32,8 +32,8 @@ public class Client {
         int nTurno=0 ; //indica a quale turno il torneo si trova
         int inizioTorneo=0 ; // serve per il controllo delle funzionalita ammesse.
         int nGiocatori=0 ; //tiene il conto del numero di giocatori inseriti
-        int turnoInCorso=0 ; //indica, se posto a 1, che un turno e ancora in corso di svolgimento.
-        int fineTorneo=0 ; //posto ad 1 indica che il torneo e terminato
+        int turnoInCorso=0 ; //indica, se posto a 1, che un turno è ancora in corso di svolgimento.
+        int fineTorneo=0 ; //posto ad 1 indica che il torneo è terminato
 
         String nomeGiocatore ;
         String cognomeGiocatore ;
@@ -53,24 +53,21 @@ public class Client {
                 //------LETTURA DEL MENU A TENDINA------
 
                 int ciclo = 0;
-                String message1= null ;
                 while (ciclo != 1) {
-                    message1 = in.nextLine();
-                    if (message1.startsWith("end"))
+                    message = in.nextLine();
+                    if (message.startsWith("end"))
                         ciclo = 1;
                     else
-                        message=message+message1 ;
-                        //System.out.println(message);
+                        System.out.println(message);
                 }
-                clearScreen();
-                System.out.println(message);
+
 
 
                 scelta = Integer.parseInt(scanner.nextLine());
                 out.println(scelta); //COMUNICO LA SCELTA AL SERVER
                 out.flush();
 
-                if(scelta==1) { //dovro leggere nome cognome e punteggio elo
+                if(scelta==1) { //dovrò leggere nome cognome e punteggio elo
                     //clearScreen();
                     inizioTorneo=Integer.parseInt(in.nextLine()) ;
                     if (inizioTorneo == 0) {

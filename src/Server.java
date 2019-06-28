@@ -11,13 +11,13 @@ public class Server {
 
     List<Player> elencoGiocatori = new ArrayList<Player>() ; //contiene l'elenco dei partecipanti.
     Standings classifica = new Standings() ;
-    Round round ; // e l'oggetto turno fatto dagli abbinamenti correnti;
-    int nTurno=1 ; //inizialmente il numero del turno da generare e il primo.
-    int idPlayer=0 ; // e un identificativo crescente che viene assegnato ai giocatori
+    Round round ; // è l'oggetto turno fatto dagli abbinamenti correnti;
+    int nTurno=1 ; //inizialmente il numero del turno da generare è il primo.
+    int idPlayer=0 ; // è un identificativo crescente che viene assegnato ai giocatori
     int inizioTorneo=0 ; //serve per il controllo delle operazioni possibili ; //0 indica che il torneo deve ancora
-    //iniziare, 1 che e in corso,
+    //iniziare, 1 che è in corso,
     int fineTorneo=0 ; //quando è posto ad 1 il torneo è terminato
-    int turnoInCorso=0 ; //identifica, se posto a 1, che un turno e in corso di svolgimento e non completato.
+    int turnoInCorso=0 ; //identifica, se posto a 1, che un turno è in corso di svolgimento e non completato.
     int nRisultatiInseriti=0 ;
     private int port;
     private int balance;
@@ -87,7 +87,7 @@ public class Server {
                     message = "Torneo di scacchi\n\n[1] Inserisci partecipanti\n[2] Visualizza partecipanti\n";
                     message=message+"[3] Visualizza classifica\n[4] Genera turno\n[5] Visualizza turno\n" ;
                     message=message+"[6] Segui match\n[7] Esci dal programma\n" ;
-                    message=message+"end" ; // utilizzata per segnalare la fine dell invio di un flusso di dati.
+                    message=message+"end" ; // utilizzata per segnalare la fine dell'invio di un flusso di dati.
 
                     out.println(message);
                     out.flush(); //invio il MENU A TENDINA AL CLIENT
@@ -99,7 +99,7 @@ public class Server {
                         if(scelta==1) {
                             out.println(inizioTorneo);
                             out.flush();
-                            if (inizioTorneo == 0) { //se il torneo non e ancora iniziato...
+                            if (inizioTorneo == 0) { //se il torneo non è ancora iniziato...
                                 Player player = new Player(); //creo un nuovo Oggetto di tipo Player.
 
                                 message = "Nome:";
@@ -189,7 +189,7 @@ public class Server {
                                 if(elencoGiocatori.size()>=3 && turnoInCorso!=1 && fineTorneo!=1){
                                 int matchId=0 ;
                                 int turno=0 ;
-                                int board=0 ; //indica il numero di scacchiera dell incontro.
+                                int board=0 ; //indica il numero di scacchiera dell'incontro.
                                 int ricercaGiocatore=0 ;
                                 int nturniNecessari=0 ; //indica il numero di turni necessari per completare il torneo.
                                 round=new Round() ;
@@ -202,7 +202,7 @@ public class Server {
                                 else
                                     nomeFile=Integer.toString(elencoGiocatori.size()) ;
 
-                                nturniNecessari=Integer.parseInt(nomeFile)-1 ; //mi serve per capire quando il torneo e completato.
+                                nturniNecessari=Integer.parseInt(nomeFile)-1 ; //mi serve per capire quando il torneo è completato.
                                 nomeFile=nomeFile+".txt" ;
                                 System.out.println("cerco nel file "+nomeFile);
 
@@ -214,8 +214,8 @@ public class Server {
                                     turno=Integer.parseInt(scanner.nextLine()) ;
                                     tabellaAbbinamento=scanner.nextLine() ;
                                 }
-                                Player player1= new Player() ; //sara il bianco dell incontro
-                                Player player2= new Player() ; //sara il nero dell incontro
+                                Player player1= new Player() ; //sarà il bianco dell incontro
+                                Player player2= new Player() ; //sarà il nero dell incontro
                                 for(String number : tabellaAbbinamento.split(" ") ) {
                                     for (Player player : elencoGiocatori) {
                                         if (ricercaGiocatore == 0) { //devo ancora trovare il primo giocatore
@@ -246,11 +246,11 @@ public class Server {
                                 }
 
                                 nTurno++ ;
-                                turnoInCorso=1 ; // c e un turno in corso di svolgimento!
+                                turnoInCorso=1 ; // un turno è già in corso di svolgimento!
                                 nRisultatiInseriti=0 ; // non ho ancora inserito risultati per questo turno
 
 
-                                //System.out.println("la size e: "+ round.pairingList.size());
+                                //System.out.println("la size è: "+ round.pairingList.size());
                                 for(Pairing pairing : round.getPairingList()){
                                     System.out.println(pairing.getPlayer1().getSurname()+" "+pairing.getPlayer2().getSurname()+"\n");
                                 }
@@ -349,7 +349,7 @@ public class Server {
                                     invio=in.nextLine() ;
 
                                     if (nRisultatiInseriti == round.getPairingList().size()) {
-                                        turnoInCorso = 0; //il turno e terminato
+                                        turnoInCorso = 0; //il turno è terminato
                                         //STAMPO SU FILE...
                                         String nomeFile="turno"+(nTurno-1)+".txt" ;
                                         file = new File(nomeFile) ;

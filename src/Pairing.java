@@ -6,10 +6,10 @@ public class Pairing {
     private Player player1 ;
     private Player player2 ;
     private double results ;
-    private List<String> moves = new ArrayList<String>() ; //e la lista di mosse del match
+    private List<String> moves = new ArrayList<String>() ; //è la lista di mosse del match
     private int board ;
     private int matchId ;
-    private int seguito=0 ; //serve per indicare se un match e gie visionato da un arbitro
+    private int seguito=0 ; //serve per indicare se un match è già visionato da un arbitro
 
 
     public Player getPlayer1() {
