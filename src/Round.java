@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Round {
-
+    
     private List<Pairing> pairingList = new ArrayList<Pairing>() ; // Il turno è una lista di abbinamenti!
     private int nRound ; //identifica il numero del turno.
 

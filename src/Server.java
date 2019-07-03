@@ -204,7 +204,7 @@ public class Server {
 
                                 nturniNecessari=Integer.parseInt(nomeFile)-1 ; //mi serve per capire quando il torneo è completato.
                                 nomeFile=nomeFile+".txt" ;
-                                System.out.println("cerco nel file "+nomeFile);
+                                System.out.println("Controllo abbinamenti nel file "+nomeFile);
 
                                 File file =new File(nomeFile) ;
                                 Scanner scanner = new Scanner(file) ;
@@ -251,9 +251,9 @@ public class Server {
 
 
                                 //System.out.println("la size è: "+ round.pairingList.size());
-                                for(Pairing pairing : round.getPairingList()){
-                                    System.out.println(pairing.getPlayer1().getSurname()+" "+pairing.getPlayer2().getSurname()+"\n");
-                                }
+                                //for(Pairing pairing : round.getPairingList()){
+                                    //System.out.println(pairing.getPlayer1().getSurname()+" "+pairing.getPlayer2().getSurname()+"\n");
+                                //}
 
                                 message="Turno "+round.getnRound()+" generato con successo!\n" ;
                                 message=message+"end" ;
@@ -293,7 +293,6 @@ public class Server {
                             else
                             if (scelta==6) {
                                 File file=null ; //lo utilizzo per salvare le statistiche del turno su file
-                                //int controlloOpzione=0 ;
                                 out.println(turnoInCorso);
                                 out.flush();
                                 if (turnoInCorso==1)
